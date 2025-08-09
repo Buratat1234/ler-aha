@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แพลตฟอร์ม 2 ระดับ - ผู้ประกอบการ & ลูกค้า | Ler Kha OTOP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Kanit', sans-serif; }
+        .gold-accent { color: #FFD700; }
+        .bg-navy-blue { background-color: #0A2342; }
+        .border-navy-blue { border-color: #0A2342; }
+        .text-navy-blue { color: #0A2342; }
+        .bg-mint-green { background-color: #3EB489; }
+        .border-mint-green { border-color: #3EB489; }
+        .text-mint-green { color: #3EB489; }
+        .bg-light-gray { background-color: #F4F4F4; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-white antialiased">
+    <section id="landing-page" class="flex flex-col items-center justify-center min-h-screen p-6 text-center">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">ยินดีต้อนรับสู่แพลตฟอร์ม Ler Kha OTOP</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-8">เชื่อมต่อโอกาส สนับสนุนชุมชน ผู้ประกอบการ และลูกค้าในที่เดียว</p>
+            <p class="text-md text-gray-500 mb-10">กรุณาเลือกประเภทการเข้าใช้งานของคุณ</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="showDashboard('entrepreneur')" class="bg-navy-blue text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    สำหรับผู้ประกอบการ
+                </button>
+                <button onclick="showDashboard('customer')" class="bg-mint-green text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    สำหรับลูกค้า
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="entrepreneur-dashboard" class="hidden">
+        <div class="flex h-screen bg-white">
+            <aside class="w-64 bg-navy-blue text-white flex flex-col no-scrollbar overflow-y-auto">
+                <div class="p-6 text-center border-b border-gray-700">
+                    <h2 class="text-2xl font-bold gold-accent">ENTREPRENEUR</h2>
+                </div>
+                <nav class="flex-1 p-4 space-y-2">
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg bg-white bg-opacity-10 text-white"><i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>Dashboard</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition"><i data-lucide="book-open-check" class="w-5 h-5 mr-3"></i>คอร์สเรียน</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition"><i data-lucide="calendar-days" class="w-5 h-5 mr-3"></i>ที่ปรึกษา</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition"><i data-lucide="users" class="w-5 h-5 mr-3"></i>เครือข่าย</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition"><i data-lucide="package" class="w-5 h-5 mr-3"></i>สินค้าของฉัน</a>
+                </nav>
+                <div class="p-4 border-t border-gray-700">
+                    <button onclick="showDashboard('landing')" class="w-full flex items-center justify-center px-4 py-3 rounded-lg text-white bg-red-500 hover:bg-red-600 transition"><i data-lucide="log-out" class="w-5 h-5 mr-3"></i>ออกจากระบบ</button>
+                </div>
+            </aside>
+            <main class="flex-1 flex flex-col">
+                <header class="flex items-center justify-between p-4 bg-white border-b">
+                    <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="bell" class="w-6 h-6 text-gray-500 cursor-pointer"></i>
+                        <img src="https://placehold.co/40x40/0A2342/FFD700?text=E" alt="User Profile" class="w-10 h-10 rounded-full cursor-pointer border-2 border-navy-blue">
+                    </div>
+                </header>
+                <div class="flex-1 p-6 md:p-8 bg-gray-50 overflow-y-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-navy-blue mb-2">คอร์สเรียนล่าสุด</h3>
+                            <p class="text-gray-600 mb-4">การตลาดดิจิทัล 101</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4"><div class="bg-navy-blue h-2.5 rounded-full" style="width: 75%"></div></div>
+                            <button class="w-full bg-navy-blue text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition">เรียนต่อ</button>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-navy-blue mb-2">นัดหมายที่ปรึกษา</h3>
+                            <p class="text-gray-600 mb-4">คุณมีนัดหมายกับ 'คุณสมชาย' วันพรุ่งนี้ 10:00 น.</p>
+                            <button class="w-full border-2 border-navy-blue text-navy-blue font-semibold py-2 px-4 rounded-lg hover:bg-navy-blue hover:text-white transition">ดูปฏิทิน</button>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-navy-blue mb-2">เครือข่าย</h3>
+                            <p class="text-gray-600 mb-4">มี 5 ข้อความใหม่ในฟอรัม 'กลยุทธ์ธุรกิจ'</p>
+                            <button class="w-full bg-navy-blue text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition">ไปที่ฟอรัม</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <section id="customer-dashboard" class="hidden">
+        <div class="flex h-screen bg-white">
+            <aside class="w-64 bg-mint-green text-white flex flex-col no-scrollbar overflow-y-auto">
+                <div class="p-6 text-center border-b border-white border-opacity-30">
+                    <h2 class="text-2xl font-bold">CUSTOMER</h2>
+                </div>
+                <nav class="flex-1 p-4 space-y-2">
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white"><i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>Dashboard</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition"><i data-lucide="shopping-cart" class="w-5 h-5 mr-3"></i>ร้านค้า</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition"><i data-lucide="calendar-check" class="w-5 h-5 mr-3"></i>กิจกรรม</a>
+                    <a href="#" class="flex items-center px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition"><i data-lucide="video" class="w-5 h-5 mr-3"></i>รีวิว/บทความ</a>
+                </nav>
+                <div class="p-4 border-t border-white border-opacity-30">
+                    <button onclick="showDashboard('landing')" class="w-full flex items-center justify-center px-4 py-3 rounded-lg text-white bg-red-500 hover:bg-red-600 transition"><i data-lucide="log-out" class="w-5 h-5 mr-3"></i>ออกจากระบบ</button>
+                </div>
+            </aside>
+            <main class="flex-1 flex flex-col">
+                <header class="flex items-center justify-between p-4 bg-white border-b">
+                    <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-gray-500 cursor-pointer"></i>
+                        <img src="https://placehold.co/40x40/3EB489/ffffff?text=C" alt="User Profile" class="w-10 h-10 rounded-full cursor-pointer border-2 border-mint-green">
+                    </div>
+                </header>
+                <div class="flex-1 p-6 md:p-8 bg-gray-50 overflow-y-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-mint-green mb-2">สินค้าแนะนำ</h3>
+                            <p class="text-gray-600 mb-4">OTOP ยอดนิยมจากชุมชน</p>
+                            <button class="w-full bg-mint-green text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition">ดูทั้งหมด</button>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-mint-green mb-2">กิจกรรมใกล้คุณ</h3>
+                            <p class="text-gray-600 mb-4">เทศกาลชุมชนสัปดาห์หน้า</p>
+                            <button class="w-full border-2 border-white text-mint-green font-semibold py-2 px-4 rounded-lg hover:bg-mint-green hover:text-white transition">ดูปฏิทิน</button>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-mint-green mb-2">รีวิวล่าสุด</h3>
+                            <p class="text-gray-600 mb-4">บทความรีวิวสินค้าจากลูกค้า</p>
+                            <button class="w-full bg-mint-green text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition">อ่านรีวิว</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <script>
+        function showDashboard(which) {
+            const landing = document.getElementById('landing-page');
+            const ent = document.getElementById('entrepreneur-dashboard');
+            const cust = document.getElementById('customer-dashboard');
+            landing.classList.add('hidden'); ent.classList.add('hidden'); cust.classList.add('hidden');
+            if (which === 'entrepreneur') ent.classList.remove('hidden');
+            else if (which === 'customer') cust.classList.remove('hidden');
+            else landing.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
